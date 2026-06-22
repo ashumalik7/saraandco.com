@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our Atelier | Sara & Co.</title>
+    
+    <!-- Stable CSS Engine Direct Trigger -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        .serif-title { font-family: 'Playfair Display', serif; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-[#fcfbf9] min-h-screen text-stone-900 font-sans antialiased tracking-wide select-none flex flex-col items-center">
+
+    <!-- Simple Luxury Navigation Header -->
+    <header class="w-full py-6 px-6 md:px-16 flex justify-between items-center bg-[#fcfbf9]/95 backdrop-blur-md sticky top-0 z-[100] border-b border-stone-200/40">
+        
+        <a href="index.html" class="text-[10px] uppercase tracking-[0.25em] text-stone-400 hover:text-stone-900 transition-colors duration-300 font-medium cursor-pointer outline-none">
+            &larr; Back to Store
+        </a>
+        
+        <a href="index.html" class="flex flex-col items-center group outline-none cursor-pointer">
+            <span class="text-xl font-bold tracking-wide leading-none serif-title transition-colors duration-300 group-hover:text-amber-800">Sara <span class="italic font-normal lowercase">&amp;</span> Co.</span>
+            <span class="text-[7px] uppercase tracking-[0.3em] font-bold mt-1 leading-none text-stone-400 group-hover:text-stone-600 transition-colors duration-300">Fine Jewelry</span>
+        </a>
+        
+        <div class="w-24 hidden md:block"></div>
+    </header>
+
+    <!-- MAIN CORE FRAMEWORK CONTAINER -->
+    <main class="w-full max-w-5xl px-6 py-20 flex flex-col items-center justify-center space-y-28">
+        
+        <!-- 1. Hero Intro Frame -->
+        <section class="text-center space-y-4 max-w-2xl mx-auto flex flex-col items-center">
+            <span class="text-[9px] uppercase tracking-[0.4em] text-amber-700 font-bold block">The Heritage</span>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-light leading-tight serif-title tracking-wide">
+                Crafting Legacies, <br><span class="italic font-serif text-stone-400 font-normal">Not Just Jewelry.</span>
+            </h1>
+            <p class="text-stone-500 text-xs sm:text-sm font-light leading-relaxed tracking-wide pt-2 max-w-xl">
+                Founded on the pillars of absolute geometric perfection and certified pure element allocation, Sara & Co. redefines high-end custom joaillerie for the modern connoisseur.
+            </p>
+        </section>
+
+        <!-- 2. Dual Column Split (Strict Flex Layout) -->
+        <section class="flex flex-col md:flex-row items-center justify-between w-full max-w-4xl mx-auto gap-12">
+            <!-- Left Side Text Block -->
+            <div class="w-full md:w-1/2 space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
+                <span class="text-[9px] uppercase tracking-[0.35em] text-amber-700 font-bold block">The Philosophy</span>
+                <h2 class="text-2xl font-light serif-title text-stone-900 tracking-wide uppercase">The Pure Metamorphosis</h2>
+                <p class="text-stone-500 text-xs leading-relaxed font-light tracking-wide max-w-sm">
+                    Every piece created inside our atelier undergoes rigorous mathematical grid structure formatting. From analyzing structural stone configurations to refining the precise curve of a custom gold band, our goal is flawless architectural balance.
+                </p>
+                <p class="text-stone-500 text-xs leading-relaxed font-light tracking-wide max-w-sm">
+                    We exclusively source ethically high-grade diamonds and certified elements, ensuring each custom-order commission represents a permanent legacy token for generations to come.
+                </p>
+            </div>
+            
+            <!-- Right Side Clean Elegant Asset Preview -->
+            <div class="w-full md:w-1/2 flex justify-center md:justify-end">
+                <div class="w-full max-w-sm h-80 md:h-[400px] bg-stone-50 p-3 border border-stone-200/40 shadow-xl rounded-xs overflow-hidden group relative">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=600" alt="Atelier Craft" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-103">
+                    <div class="absolute inset-0 bg-stone-950/5 pointer-events-none"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. FIXED: FLEX CONTAINER (STRICT SYMMETRICAL CORE VALUES ALIGNMENT) -->
+        <section class="border-t border-stone-200/40 pt-16 w-full max-w-4xl mx-auto flex flex-col items-center justify-center">
+            
+            <div class="text-center w-full mb-12">
+                <span class="text-[9px] uppercase tracking-[0.4em] text-amber-700 font-bold block">Atelier Standards</span>
+                <h2 class="text-xl md:text-2xl font-light serif-title tracking-widest uppercase mt-1">Our Three Pillars</h2>
+            </div>
+            
+            <!-- Removed Grid Classes completely to avoid HTML Engine Bugs -->
+            <div class="w-full flex flex-col md:flex-row items-stretch justify-center gap-10 md:gap-6 text-center md:text-left">
+                
+                <!-- Pillar 1 -->
+                <div class="w-full md:w-1/3 flex flex-col items-center md:items-start p-2 border-t md:border-t-0 md:border-l border-stone-200 pt-6 md:pt-0 md:pl-6">
+                    <h3 class="font-mono text-[11px] font-bold tracking-widest text-stone-900 uppercase mb-2">01. Certified Purity</h3>
+                    <p class="text-stone-400 text-xs font-light leading-relaxed max-w-xs md:max-w-none">Every individual stone and precious metal batch carries authentic certification mapping absolute quality parameters.</p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="w-full md:w-1/3 flex flex-col items-center md:items-start p-2 border-t md:border-t-0 md:border-l border-stone-200 pt-6 md:pt-0 md:pl-6">
+                    <h3 class="font-mono text-[11px] font-bold tracking-widest text-stone-900 uppercase mb-2">02. Bespoke Engineering</h3>
+                    <p class="text-stone-400 text-xs font-light leading-relaxed max-w-xs md:max-w-none">We reject mass production molds. Each asset is engineered exclusively upon commission approval to retain rare execution values.</p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="w-full md:w-1/3 flex flex-col items-center md:items-start p-2 border-t md:border-t-0 md:border-l border-stone-200 pt-6 md:pt-0 md:pl-6">
+                    <h3 class="font-mono text-[11px] font-bold tracking-widest text-stone-900 uppercase mb-2">03. Eternal Aesthetics</h3>
+                    <p class="text-stone-400 text-xs font-light leading-relaxed max-w-xs md:max-w-none">Infusing mid-century traditional design principles into modern minimalist framework structures for a timeless luxury aura.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Space Holder -->
+    <footer class="w-full py-12 border-t border-stone-200/30 text-center text-[9px] font-mono tracking-widest text-stone-400 uppercase mt-auto">
+        &copy; 2026 SARA & CO. HAUTE JOAILLERIE. ALL RIGHTS RESERVED.
+    </footer>
+
+</body>
+</html>

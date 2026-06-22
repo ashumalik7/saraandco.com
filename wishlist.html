@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Wishlist | Sara & Co.</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        .serif-title { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-[#fcfbf9] min-h-screen text-stone-900 font-sans tracking-wide antialiased">
+
+    <!-- Simple Back Navigation Header -->
+    <header class="w-full py-6 px-6 md:px-16 flex justify-between items-center bg-white border-b border-stone-200/40 sticky top-0 z-50">
+        <a href="index.html" class="text-[11px] uppercase tracking-[0.25em] text-stone-500 hover:text-stone-900 transition-colors flex items-center gap-2">
+            ← Back To Store
+        </a>
+        <h1 class="text-xl serif-title tracking-wide font-bold">Sara &amp; Co.</h1>
+        <div class="w-20"></div> <!-- Balance Space -->
+    </header>
+
+    <!-- Wishlist Wrapper Grid -->
+    <main class="max-w-7xl mx-auto py-16 px-6 md:px-16 space-y-12">
+        <div class="flex flex-col items-center md:items-start">
+            <span class="text-[9px] uppercase tracking-[0.4em] text-amber-700 font-bold">Your Curated Pieces</span>
+            <h2 class="text-2xl md:text-4xl font-light serif-title tracking-wide text-stone-900 mt-1 uppercase">Saved Vault Items</h2>
+        </div>
+
+        <!-- Dynamic Grid where items will load via local storage -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12" id="wishlistItemsGrid">
+            <!-- JavaScript will auto-inject elements here -->
+        </div>
+
+        <!-- Fallback text if wishlist empty -->
+        <div id="emptyWishlistState" class="hidden text-center py-20 space-y-4">
+            <p class="text-stone-400 text-sm font-light">Your vault selection is currently empty.</p>
+            <a href="index.html" class="inline-block bg-stone-950 text-white px-8 py-3 text-[11px] uppercase tracking-[0.2em]">Browse Catalog</a>
+        </div>
+    </main>
+
+    <script>
+        // Basic load and clear logic for wishlist storage
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('wishlistItemsGrid');
+            const emptyState = document.getElementById('emptyWishlistState');
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            if(wishlist.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            // Note: Replace this dummy mapping with your real product data loop from main.js
+            grid.innerHTML = wishlist.map(id => `
+                <div class="relative group flex flex-col space-y-3 bg-white border border-stone-200/30 p-3 shadow-xs">
+                    <button onclick="removeFromWishlist('${id}')" class="absolute top-4 right-4 z-30 text-stone-400 hover:text-stone-900 transition-colors text-xs">✕ Remove</button>
+                    <div class="w-full h-64 bg-stone-50 overflow-hidden rounded-xs">
+                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=400" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex flex-col space-y-1 pt-2">
+                        <span class="text-[10px] uppercase font-mono tracking-wider text-stone-400">ITEM ID: ${id}</span>
+                        <h3 class="text-sm font-medium text-stone-900 font-sans">Premium Vault Asset</h3>
+                    </div>
+                </div>
+            `).join('');
+        });
+
+        window.removeFromWishlist = function(id) {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            wishlist = wishlist.filter(item => item !== id);
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            window.location.reload(); // Instantly clears view from separate page
+        };
+    </script>
+</body>
+</html>
